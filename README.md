@@ -106,3 +106,8 @@ If you find this repository useful for your research, please cite the following 
 
 <img width="160" alt="image" src="https://cdn.luogu.com.cn/upload/image_hosting/5h3609p1.png"><img width="160" alt="image" src="https://cdn.luogu.com.cn/upload/image_hosting/yi3kcwnw.png">
 
+## Troubleshooting
+If you got Unknown encoder 'libx264', 
+```python
+  conda install x264=='1!152.20180717' ffmpeg=4.0.2 -c conda-forge
+```

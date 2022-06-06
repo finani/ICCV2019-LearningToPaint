@@ -12,7 +12,7 @@ determine the position and color of each stroke and make long-term plans to
 decompose texture-rich images into strokes. Experiments demonstrate that
 excellent visual effects can be achieved using hundreds of strokes. The
 training process does not require the experience of human painters or stroke
-tracking data. 
+tracking data.
 
 **You can easily use [colaboratory](https://colab.research.google.com/github/hzwer/LearningToPaint/blob/master/LearningToPaint.ipynb) to have a try.**
 
@@ -20,7 +20,7 @@ tracking data.
 ![Demo](./demo/palacemuseum.gif)![Demo](./demo/deepdream_night.gif)![Demo](./demo/deepdream_bird.gif)
 
 ### Dependencies
-* [PyTorch](http://pytorch.org/) 1.1.0 
+* [PyTorch](http://pytorch.org/) 1.1.0
 * [tensorboardX](https://github.com/lanpa/tensorboard-pytorch/tree/master/tensorboardX)
 * [opencv-python](https://pypi.org/project/opencv-python/) 3.4.0
 ```
@@ -42,6 +42,11 @@ $ ffmpeg -r 10 -f image2 -i output/generated%d.png -s 512x512 -c:v libx264 -pix_
 (make a painting process video)
 ```
 
+If you want to run each stroke,
+``` bash
+python3 baseline/test_4strokes.py --max_step=100 --img=image/test.png --divide=4
+```
+
 We also provide with some other neural renderers and agents, you can use them instead of renderer.pkl to train the agent:
 
 [triangle.pkl](https://drive.google.com/open?id=1YefdnTuKlvowCCo1zxHTwVJ2GlBme_eE) --- [actor_triangle.pkl](https://drive.google.com/open?id=1k8cgh3tF7hKFk-IOZrgsUwlTVE3CbcPF);
@@ -50,14 +55,14 @@ We also provide with some other neural renderers and agents, you can use them in
 
 [bezierwotrans.pkl](https://drive.google.com/open?id=1XUdti00mPRh1-1iU66Uqg4qyMKk4OL19) --- [actor_notrans.pkl](https://drive.google.com/open?id=1VBtesw2rHmYu2AeJ22XvTCuzuqkY8hZh)
 
-We also provide 百度网盘 source. 链接: https://pan.baidu.com/s/1GELBQCeYojPOBZIwGOKNmA 提取码: aq8n 
+We also provide 百度网盘 source. 链接: https://pan.baidu.com/s/1GELBQCeYojPOBZIwGOKNmA 提取码: aq8n
 ## Training
 
 ### Datasets
 Download the [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset and put the aligned images in data/img_align_celeba/\*\*\*\*\*\*.jpg
 
 ### Neural Renderer
-To create a differentiable painting environment, we need train the neural renderer firstly. 
+To create a differentiable painting environment, we need train the neural renderer firstly.
 
 ```
 $ python3 baseline/train_renderer.py

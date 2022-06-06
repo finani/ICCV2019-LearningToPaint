@@ -4,4 +4,8 @@
 data/
 *.pkl
 
-output/*
+output*/*
+image/parrot
+image/rrt
+image/test1
+*.zip
